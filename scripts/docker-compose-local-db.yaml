@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  localdb:
+    container_name: corporate-library-localdb
+    image: postgres:14.1-alpine
+    environment:
+      POSTGRES_DB: okbut
+      POSTGRES_USER: okbut
+      POSTGRES_PASSWORD: okpass
+    restart: always
+    ports:
+      - "5432:5432"
