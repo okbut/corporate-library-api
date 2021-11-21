@@ -3,12 +3,15 @@
 ## Commands
 
 ```bash
-# 실행
-docker-compose up -d
-# 중단
-docker-compose down
 # DB만 실행
-docker-compose -f docker-compose-local-db.yaml up -d
+docker-compose -f ./scripts/docker-compose-local-db.yaml up -d
+# DB 중단
+docker-compose -f ./scripts/docker-compose-local-db.yaml down
+
+# 실행
+docker-compose -f ./scripts/docker-compose.yaml up -d
+# 중단
+docker-compose -f ./scripts/docker-compose.yaml down
 # 실행 전 이미지 빌드
-docker-compose up --build
+docker-compose -f ./scripts/docker-compose.yaml up --build
 ```

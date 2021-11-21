@@ -1,8 +1,13 @@
 plugins {
+    // Java
     id 'application'
 
+    // Spring
     id 'org.springframework.boot' version '2.5.3'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+
+    // Asciidoctor
+    id 'org.asciidoctor.convert' version '2.4.0'
 }
 
 group = 'com.okbut'
@@ -20,21 +25,29 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     runtimeOnly 'org.postgresql:postgresql:42.3.1'
 
+    // Spring Security
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+
     // Lombok
     compileOnly 'org.projectlombok:lombok:1.18.20'
     annotationProcessor 'org.projectlombok:lombok:1.18.16'
 
     // Spring Boot Test
     testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
+        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' // for JUnit 4
     }
 
     // Spring REST Docs
+    asciidoctor 'org.springframework.restdocs:spring-restdocs-asciidoctor'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
 }
 
 test {
     useJUnitPlatform()
+}
+
+asciidoctor {
+    dependsOn(clean, test)
 }
 
 application {

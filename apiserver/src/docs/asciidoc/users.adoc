@@ -1,0 +1,17 @@
+== 사용자
+
+=== 사용자 정보 찾기
+
+사용자 정보를 찾고 JSON 형태로 리턴합니다.
+
+.Request
+
+include::{snippets}/users-get/http-request.adoc[]
+
+include::{snippets}/users-get/path-parameters.adoc[]
+
+.Response
+
+include::{snippets}/users-get/http-response.adoc[]
+
+include::{snippets}/users-get/response-fields.adoc[]
