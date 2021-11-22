@@ -1,6 +1,7 @@
-package apiserver.app.config.error;
+package com.okbut.api.exceptions;
 
-import apiserver.app.config.error.expcetion.UserNotFoundException;
+import com.okbut.error.ErrorResponse;
+import com.okbut.error.expcetion.UserNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;

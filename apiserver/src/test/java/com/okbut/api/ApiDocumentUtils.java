@@ -1,4 +1,4 @@
-package apiserver.app;
+package com.okbut.api;
 
 import org.springframework.restdocs.operation.preprocess.OperationRequestPreprocessor;
 import org.springframework.restdocs.operation.preprocess.OperationResponsePreprocessor;
