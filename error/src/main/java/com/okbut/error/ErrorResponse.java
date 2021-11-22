@@ -1,4 +1,4 @@
-package apiserver.app.config.error;
+package com.okbut.error;
 
 public class ErrorResponse {
     private final String message;

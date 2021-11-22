@@ -1,8 +1,8 @@
-package apiserver.app.users.application;
+package com.okbut.api.users.application;
 
-import apiserver.app.config.error.expcetion.UserNotFoundException;
-import apiserver.app.users.domain.Member;
-import apiserver.app.users.domain.UserRepository;
+import com.okbut.api.users.domain.Member;
+import com.okbut.api.users.domain.UserRepository;
+import com.okbut.error.expcetion.UserNotFoundException;
 import org.springframework.stereotype.Service;
 
 @Service

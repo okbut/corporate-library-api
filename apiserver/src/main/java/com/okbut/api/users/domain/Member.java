@@ -1,4 +1,4 @@
-package apiserver.app.users.domain;
+package com.okbut.api.users.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

@@ -10,14 +10,15 @@ plugins {
     id 'org.asciidoctor.convert' version '2.4.0'
 }
 
-group = 'com.okbut'
-sourceCompatibility = '11'
+version '0.1.0'
 
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    implementation project(':error')
+
     // Spring Web
     implementation 'org.springframework.boot:spring-boot-starter-web'
 
@@ -48,10 +49,6 @@ test {
 
 asciidoctor {
     dependsOn(clean, test)
-}
-
-application {
-    mainClass = 'apiserver.app.App'
 }
 
 def profile = "local"

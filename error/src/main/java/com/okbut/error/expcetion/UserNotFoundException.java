@@ -1,4 +1,4 @@
-package apiserver.app.config.error.expcetion;
+package com.okbut.error.expcetion;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.client.HttpClientErrorException;
