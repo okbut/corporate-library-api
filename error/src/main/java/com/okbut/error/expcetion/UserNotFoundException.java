@@ -1,11 +1,8 @@
 package com.okbut.error.expcetion;
 
-import org.springframework.http.HttpStatus;
-import org.springframework.web.client.HttpClientErrorException;
-
-public class UserNotFoundException extends HttpClientErrorException {
+public class UserNotFoundException extends RuntimeException {
     public UserNotFoundException(String message) {
-        super(HttpStatus.NOT_FOUND, message);
+        super(message);
     }
 
     public UserNotFoundException(Long id) {

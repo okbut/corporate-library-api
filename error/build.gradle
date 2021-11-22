@@ -1,11 +1,6 @@
 plugins {
     // Java
     id 'application'
-
-    // Spring
-    // https://docs.spring.io/spring-boot/docs/2.5.3/gradle-plugin/reference/htmlsingle/
-    id 'org.springframework.boot' version '2.5.3'
-    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
 version '0.1.0'
@@ -15,13 +10,8 @@ repositories {
 }
 
 dependencies {
-    // Spring Web
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-
-    // Spring Boot Test
-    testImplementation('org.springframework.boot:spring-boot-starter-test') {
-        exclude group: 'org.junit.vintage', module: 'junit-vintage-engine' // for JUnit 4
-    }
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
 }
 
 test {
