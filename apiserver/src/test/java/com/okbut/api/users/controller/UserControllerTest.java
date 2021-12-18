@@ -2,7 +2,7 @@ package com.okbut.api.users.controller;
 
 import com.okbut.api.ApiDocumentUtils;
 import com.okbut.api.users.application.UserService;
-import com.okbut.api.users.domain.Member;
+import com.okbut.api.users.domain.User;
 import com.okbut.error.expcetion.UserNotFoundException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -51,7 +51,7 @@ class UserControllerTest {
         @DisplayName("만약 유효한 사용자 식별자가 주어진다면")
         class Context_with_valid_user_id {
             final Long validUserId = 1L;
-            final Member desiredMember = Member.builder()
+            final User desiredMember = User.builder()
                     .id(validUserId)
                     .build();
 
@@ -84,9 +84,6 @@ class UserControllerTest {
         @DisplayName("만약 유효하지 않은 사용자 식별자가 주어진다면")
         class Context_with_invalid_user_id {
             final Long invalidUserId = 1L - 100L;
-            final Member desiredMember = Member.builder()
-                    .id(invalidUserId)
-                    .build();
 
             @BeforeEach
             void mocking() {

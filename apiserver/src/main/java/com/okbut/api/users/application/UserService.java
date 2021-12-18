@@ -1,7 +1,7 @@
 package com.okbut.api.users.application;
 
-import com.okbut.api.users.domain.Member;
+import com.okbut.api.users.domain.User;
 
 public interface UserService {
-    Member findUser(Long userId);
+    User findUser(Long userId);
 }
