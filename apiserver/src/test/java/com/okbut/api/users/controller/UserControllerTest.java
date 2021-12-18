@@ -74,7 +74,16 @@ class UserControllerTest {
                                 pathParameters(
                                         parameterWithName("id").description("식별자")),
                                 responseFields(
-                                        fieldWithPath("id").type(JsonFieldType.NUMBER).description("식별자"))));
+                                        // FIXME: 생성 API가 만들어지면 Type.NULL에서 Type.STRING으로 테스트를 변경해주세요
+                                        fieldWithPath("id").type(JsonFieldType.NUMBER).description("식별자"),
+                                        fieldWithPath("createdAt").type(JsonFieldType.NULL).description("등록자"),
+                                        fieldWithPath("updatedAt").type(JsonFieldType.NULL).description("수정자"),
+                                        fieldWithPath("createdBy").type(JsonFieldType.NULL).description("등록일시"),
+                                        fieldWithPath("updatedBy").type(JsonFieldType.NULL).description("수정일시"),
+                                        fieldWithPath("email").type(JsonFieldType.NULL).description("이메일"),
+                                        fieldWithPath("username").type(JsonFieldType.NULL).description("사용자명"),
+                                        fieldWithPath("password").type(JsonFieldType.NULL).description("비밀번호")
+                                )));
 
                 verify(userService).findUser(anyLong());
             }
