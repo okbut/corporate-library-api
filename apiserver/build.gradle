@@ -42,6 +42,10 @@ dependencies {
     // Spring REST Docs
     asciidoctor 'org.springframework.restdocs:spring-restdocs-asciidoctor'
     testImplementation 'org.springframework.restdocs:spring-restdocs-mockmvc'
+
+    // LocalDateTime 직렬화를 위해 추가
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-jsr310:2.13.0'
+
 }
 
 test {
