@@ -46,10 +46,11 @@ class BookControllerTest {
     @Nested
     @DisplayName("POST /books 요청은")
     class Describe_post_books {
-        final Long isbn = 1234567890123L;
+        final String isbn = "1234567890123";
         final Book book =
                 Book.builder()
                     .id(1L)
+                    .isbn(isbn)
                     .build();
 
         @BeforeEach
@@ -69,7 +70,6 @@ class BookControllerTest {
                    .andExpect(status().isCreated())
                    .andExpect(content().contentType(MediaType.APPLICATION_JSON))
                    .andExpect(jsonPath("$.isbn").value(isbn))
-//                   .andExpect(jsonPath("$.[?(@.isbn == '%d')]", isbn).exists())
                    .andDo(print());
 
             verify(bookService).registerBook(any(Book.class));
