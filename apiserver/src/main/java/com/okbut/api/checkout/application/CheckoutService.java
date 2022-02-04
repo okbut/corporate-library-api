@@ -1,25 +1,12 @@
 package com.okbut.api.checkout.application;
 
 import com.okbut.api.checkout.domain.CheckOut;
-import com.okbut.api.checkout.domain.CheckoutRepository;
-import com.okbut.api.users.application.UserService;
-import com.okbut.api.users.domain.User;
-import lombok.RequiredArgsConstructor;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-@Service
-@RequiredArgsConstructor
-public class CheckoutService {
+public interface CheckoutService {
 
-    private final CheckoutRepository checkoutRepository;
-    private final UserService userService;
+    List<CheckOut> listCheckoutHistory(final Long userId);
 
-    public List<CheckOut> findCheckoutListOfUser(Long userId) {
-
-        User user = userService.findUser(userId);
-
-        return checkoutRepository.findByUser(user);
-    }
+    List<CheckOut> listCheckout(final Long userId);
 }

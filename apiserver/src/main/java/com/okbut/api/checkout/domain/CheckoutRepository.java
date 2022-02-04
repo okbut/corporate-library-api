@@ -5,5 +5,7 @@ import com.okbut.api.users.domain.User;
 import java.util.List;
 
 public interface CheckoutRepository {
-    List<CheckOut> findByUser(User user);
+    List<CheckOut> findByUserAndReturnDtmNotNull(final User user);
+
+    List<CheckOut> findByUserAndReturnDtmNull(final User user);
 }
