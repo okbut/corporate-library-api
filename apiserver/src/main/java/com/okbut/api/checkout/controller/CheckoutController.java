@@ -15,8 +15,13 @@ public class CheckoutController {
 
     private final CheckoutService checkoutService;
 
+    @GetMapping("/users/{userId}/checkout/history")
+    public List<CheckOut> listCheckoutHistory(final @PathVariable Long userId) {
+        return checkoutService.listCheckoutHistory(userId);
+    }
+
     @GetMapping("/users/{userId}/checkout")
-    public List<CheckOut> findCheckoutListOfUser(final @PathVariable Long userId) {
-        return checkoutService.findCheckoutListOfUser(userId);
+    public List<CheckOut> listCheckout(final @PathVariable Long userId) {
+        return checkoutService.listCheckout(userId);
     }
 }
